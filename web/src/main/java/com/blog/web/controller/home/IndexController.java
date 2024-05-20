@@ -2,11 +2,13 @@ package com.blog.web.controller.home;
 
 import com.blog.web.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@ResponseBody
 public class IndexController {
 
     @Autowired
@@ -14,7 +16,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(){
-        return null;
+        return "this is index";
     }
 
     @GetMapping("/{id}")
